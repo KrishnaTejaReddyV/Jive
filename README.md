@@ -16,11 +16,11 @@ Aim: To build a Java IDE which can serve as a better learning tool for beginners
 
 ## Folder Structure
 ```
-Jive:</br>
-&nbsp;&nbsp;src: Contains .java files</br>
-&nbsp;&nbsp;build:</br>
-&nbsp;&nbsp;&nbsp;&nbsp;classes: Contains .class files</br>
-&nbsp;&nbsp;&nbsp;&nbsp;lib: Contains dependent .jar files</br>
-&nbsp;&nbsp;build.xml: XML file for Apache Ant</br>
-&nbsp;&nbsp;Jive.jar: jar file to run the application</br>  
+Jive:
+src: Contains .java files
+build:
+classes: Contains .class files
+lib: Contains dependent .jar files
+build.xml: XML file for Apache Ant
+Jive.jar: jar file to run the application
 ```
