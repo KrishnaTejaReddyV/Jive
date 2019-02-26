@@ -17,10 +17,10 @@ Aim: To build a Java IDE which can serve as a better learning tool for beginners
 ## Folder Structure
 ```
 Jive:
-src: Contains .java files
-build:
-classes: Contains .class files
-lib: Contains dependent .jar files
-build.xml: XML file for Apache Ant
-Jive.jar: jar file to run the application
+    src: Contains .java files
+    build:
+        classes: Contains .class files
+        lib: Contains dependent .jar files
+    build.xml: XML file for Apache Ant
+    Jive.jar: jar file to run the application
 ```
