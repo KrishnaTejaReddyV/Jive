@@ -1,0 +1,48 @@
+<?xml version="1.0"?>
+<project name="Jive" basedir="." default="main">
+
+    <property name="src.dir"     value="src"/>
+
+    <property name="build.dir"   value="build"/>
+    <property name="classes.dir" value="${build.dir}/classes"/>
+    <property name="jar.dir"     value="${build.dir}/lib"/>
+
+    <property name="main-class"  value="Main"/>
+
+    <path id="classpath">
+        <filelist dir="${jar.dir}">
+            <file name="freetts.jar"/>
+        </filelist>
+    </path>
+
+    <manifestclasspath property="jar.classpath" jarfile="${ant.project.name}.jar">
+        <classpath refid="classpath"/>
+    </manifestclasspath>
+
+    <target name="clean">
+        <delete dir="${classes.dir}"/>
+    </target>
+
+    <target name="compile">
+        <mkdir dir="${classes.dir}"/>
+        <javac srcdir="${src.dir}" classpathref="classpath" destdir="${classes.dir}"/>
+    </target>
+
+    <target name="jar" depends="compile">
+        <jar destfile="${ant.project.name}.jar" basedir="${classes.dir}">
+            <manifest>
+                <attribute name="Main-Class" value="${main-class}"/>
+                <attribute name="Class-Path" value="${jar.classpath}"/>
+            </manifest>
+        </jar>
+    </target>
+
+    <target name="run" depends="jar">
+        <java jar="${ant.project.name}.jar" fork="true"/>
+    </target>
+
+    <target name="clean-build" depends="clean,jar"/>
+
+    <target name="main" depends="clean,run"/>
+
+</project>
